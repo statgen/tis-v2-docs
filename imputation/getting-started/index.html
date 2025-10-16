@@ -1211,7 +1211,7 @@
 </ul>
 <h2 id="set-up-your-first-imputation-job">Set Up Your First Imputation Job<a class="headerlink" href="#set-up-your-first-imputation-job" title="Permanent link">&para;</a></h2>
 <p>Please <a href="https://imputation.biodatacatalyst.nhlbi.nih.gov/index.html#!pages/login">log in</a> with your credentials and click on the <strong>Run</strong> tab to start a new imputation job. The submission dialog allows you to specify the properties of your imputation job.</p>
-<p><img alt="TOPMed Imputation Server job submission page." src="/img/submit-job-01.png" /></p>
+<p><img alt="TOPMed Imputation Server job submission page." src="../../img/submit-job-01.png" /></p>
 <p>The following options are available:</p>
 <h3 id="reference-panels">Reference Panels<a class="headerlink" href="#reference-panels" title="Permanent link">&para;</a></h3>
 <h4 id="topmed-imputation-server">TOPMed Imputation Server<a class="headerlink" href="#topmed-imputation-server" title="Permanent link">&para;</a></h4>
@@ -1219,15 +1219,15 @@
 <ul>
 <li>TOPMed (Version r3 2023)</li>
 </ul>
-<p>See the <a href="/imputation/reference-panel">reference panel documentation</a> for details.</p>
+<p>See the <a href="../reference-panel/">reference panel documentation</a> for details.</p>
 <h4 id="michigan-imputation-server">Michigan Imputation Server<a class="headerlink" href="#michigan-imputation-server" title="Permanent link">&para;</a></h4>
 <p>The Michigan Imputation Server is a separate service with several additional reference panels available.  Consult the relevant <a href="https://genepi.github.io/michigan-imputationserver/reference-panels/">documentation</a> for details.</p>
 <h3 id="upload-vcf-files-from-your-computer">Upload VCF Files From Your Computer<a class="headerlink" href="#upload-vcf-files-from-your-computer" title="Permanent link">&para;</a></h3>
 <p>The Input Files dialog lets you choose VCF files for imputation. When you submit the job, all the selected files will be transferred from your local file system to the TOPMed Imputation Server. By clicking on <strong>Select Files</strong>, an open dialog will appear where you can choose your VCF files.</p>
-<p><img alt="File selection box open, showing VCF files." src="/img/upload-data-01.png" /></p>
+<p><img alt="File selection box open, showing VCF files." src="../../img/upload-data-01.png" /></p>
 <p>You can select multiple files by holding down the Ctrl, Cmd, or Shift key, depending on your operating system. After confirming your selection, all chosen files will be listed in the Input Files dialog.</p>
-<p><img alt="Selected files are displayed in the Input Files dialog." src="/img/upload-data-02.png" /></p>
-<p>Please ensure that all files meet the <a href="/data-preparation">requirements</a>.</p>
+<p><img alt="Selected files are displayed in the Input Files dialog." src="../../img/upload-data-02.png" /></p>
+<p>Please ensure that all files meet the <a href="../data-preparation/">requirements</a>.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Since version 1.7.2 URL-based uploads (<code>sftp</code> and <code>http(s)</code>) are no longer supported. Please use direct file uploads instead.</p>
@@ -1273,14 +1273,14 @@
 <p>All imputed genes are returned as encrypted ZIP files. If you select the <strong>AES 256 Encryption</strong> option, we will use the stronger AES 256 encryption protocol instead of the default method. Note that AES encryption is not compatible with standard unzip programs. If this option is selected, we recommend using <a href="https://www.7-zip.org/download.html">7-zip</a> to access your results.</p>
 <h2 id="start-your-imputation-job">Start Your Imputation Job<a class="headerlink" href="#start-your-imputation-job" title="Permanent link">&para;</a></h2>
 <p>After confirming our <strong>Terms of Service</strong>, you can submit your imputation job by clicking <strong>Start Imputation</strong>. If your data passes the QC steps, your job will be added to the queue and processed as soon as possible. You can check your position in the queue on the job summary page.</p>
-<p><img alt="Job summary page showing a waiting job, and its position in the queue." src="/img/queue-01.png" /></p>
+<p><img alt="Job summary page showing a waiting job, and its position in the queue." src="../../img/queue-01.png" /></p>
 <p>We will notify you by email as soon as the job is finished or if your data does not pass the quality control steps.</p>
 <h3 id="input-validation">Input Validation<a class="headerlink" href="#input-validation" title="Permanent link">&para;</a></h3>
 <p>In the first step, we check if your uploaded files are valid and calculate basic statistics, such as the number of samples, chromosomes, and SNPs.</p>
-<p><img alt="Job summary page showing an in-progress message for the Input Validation step." src="/img/input-validation-01.png" /></p>
+<p><img alt="Job summary page showing an in-progress message for the Input Validation step." src="../../img/input-validation-01.png" /></p>
 <p>After the input validation is complete, basic statistics can be viewed directly in the web interface.</p>
-<p><img alt="Job summary page showing an in-progress job that has completed its Input Validation step. Basic statistics are shown." src="/img/input-validation-02.png" /></p>
-<p>If you encounter problems with your data, please read this tutorial on <a href="/data-preparation">Data Preparation</a> to ensure your data is in the correct format.</p>
+<p><img alt="Job summary page showing an in-progress job that has completed its Input Validation step. Basic statistics are shown." src="../../img/input-validation-02.png" /></p>
+<p>If you encounter problems with your data, please read this tutorial on <a href="../data-preparation/">Data Preparation</a> to ensure your data is in the correct format.</p>
 <h3 id="quality-control">Quality Control<a class="headerlink" href="#quality-control" title="Permanent link">&para;</a></h3>
 <p>In this step, we check each variant and exclude it if it meets any of the following criteria:</p>
 <ol>
@@ -1297,29 +1297,29 @@
 <p class="admonition-title">Important</p>
 <p>Due to changes in Minimac 4, Michigan Imputation Server 2 now includes filtering and checks for allele swaps. For more information, please click <a href="../qc-allele-swaps/">here</a>.</p>
 </div>
-<p><img alt="Job summary page showing Quality Control results. Various statistics are displayed." src="/img/quality-control-02.png" /></p>
+<p><img alt="Job summary page showing Quality Control results. Various statistics are displayed." src="../../img/quality-control-02.png" /></p>
 <p>If you selected a population, we compare the allele frequencies of the uploaded data with those from the reference panel. The results of this check are available in the QC report and can be downloaded by clicking on <code>qcreport.html</code>.</p>
 <h3 id="pre-phasing-and-imputation">Pre-Phasing and Imputation<a class="headerlink" href="#pre-phasing-and-imputation" title="Permanent link">&para;</a></h3>
 <p>Imputation is achieved with Minimac4 (version 4.1.6).</p>
 <h3 id="data-compression-and-encryption">Data Compression and Encryption<a class="headerlink" href="#data-compression-and-encryption" title="Permanent link">&para;</a></h3>
 <p>If imputation is successful, we will compress and encrypt your data, and send you a random password via email.</p>
-<p><img alt="Job summary page showing a completed Data Compression and Encryption step. A notification indicates that the password has been sent via email to the user." src="/img/compression-01.png" /></p>
+<p><img alt="Job summary page showing a completed Data Compression and Encryption step. A notification indicates that the password has been sent via email to the user." src="../../img/compression-01.png" /></p>
 <div class="admonition important">
 <p class="admonition-title">Password not stored at any time</p>
 <p><strong>This password is not stored on our server at any time.</strong> Therefore, if you lost the password, there is no way to resend it to you.</p>
 </div>
 <h2 id="download-results">Download Results<a class="headerlink" href="#download-results" title="Permanent link">&para;</a></h2>
 <p>You will be notified by email as soon as the imputation job is complete. For each submitted gene, a ZIP archive containing the imputed results can be downloaded directly from the server. To decrypt the results, a one-time password will be generated by the server and included in the email. The QC report and filter statistics are also available for viewing and download.</p>
-<p><img alt="Job summary page displaying a completed job. A listing shows all files available for download." src="/img/job-results.png" /></p>
+<p><img alt="Job summary page displaying a completed job. A listing shows all files available for download." src="../../img/job-results.png" /></p>
 <div class="admonition important">
 <p class="admonition-title">All data is deleted automatically after 7 days</p>
 <p><strong>Be sure to download all required data within 7 calendar days!</strong> We will send you a reminder 48 hours before your data is deleted. Once your job reaches the <strong>retired</strong> state, we will not be able to recover your data.</p>
 </div>
 <h3 id="download-via-a-web-browser">Download Via a Web Browser<a class="headerlink" href="#download-via-a-web-browser" title="Permanent link">&para;</a></h3>
 <p>All results can be downloaded directly through your browser by clicking on the filename.</p>
-<p><img alt="Job summary page displaying a completed job. A listing shows all files available for download." src="/img/share-data-02.png" /></p>
+<p><img alt="Job summary page displaying a completed job. A listing shows all files available for download." src="../../img/share-data-02.png" /></p>
 <p>If you wish to download results via the command line using <code>wget</code> or <code>curl</code>, click on the download icon to obtain download links. A new dialog will appear. Use the <strong>wget</strong> tab to get a copy &amp; paste ready command that can be used on Linux or MacOS:</p>
-<p><img alt="Modal " src="/img/share-data-01.png" /></p>
+<p><img alt="Modal " src="../../img/share-data-01.png" /></p>
 <p>Otherwise, you can use the <strong>URLs</strong> tab to copy the download links.</p>
 
 

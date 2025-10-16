@@ -1391,7 +1391,7 @@
 
 <h1 id="api-reference">API Reference<a class="headerlink" href="#api-reference" title="Permanent link">&para;</a></h1>
 <h2 id="authentication">Authentication<a class="headerlink" href="#authentication" title="Permanent link">&para;</a></h2>
-<p>All HTTP calls to the API require authentication with a bearer token, sent in the request header <code>X-Auth-Token</code>. See the <a href="./api-overview">API Overview</a> for details on obtaining a token.</p>
+<p>All HTTP calls to the API require authentication with a bearer token, sent in the request header <code>X-Auth-Token</code>. See the <a href="../api-overview/">API Overview</a> for details on obtaining a token.</p>
 <p>The token you receive from the server is a JSON Web Token (JWT), as specified by the IETF standard <a href="https://tools.ietf.org/html/rfc7519">RFC 7519</a>. For a good introduction to the format, <a href="https://www.jwt.io/introduction#what-is-json-web-token">see here</a>.</p>
 <h2 id="data-models">Data Models<a class="headerlink" href="#data-models" title="Permanent link">&para;</a></h2>
 <h3 id="job-info">Job Info<a class="headerlink" href="#job-info" title="Permanent link">&para;</a></h3>
@@ -1454,8 +1454,8 @@
 <a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="p">}</span>
 </code></pre></div>
 <h2 id="endpoints">Endpoints<a class="headerlink" href="#endpoints" title="Permanent link">&para;</a></h2>
-<p>The following sections give detailed information (with examples) about the most common endpoints you will interact with.</p>
-<p>Because the authentication token should be kept secure, in all the following examples we assume you haven't copy-pasted yours in a scipt. Instead, we assume you have set it as an enviornment variable called <code>TOPMED_TOKEN</code>.</p>
+<p>The following sections give detailed information and examples about the most common endpoints you will interact with.</p>
+<p>Because the authentication token should be kept secure, in all the following examples we assume you haven't copy-pasted yours in a script. Instead, we assume you have set it as an enviornment variable called <code>TOPMED_TOKEN</code>.</p>
 <h3 id="list-your-jobs">List Your Jobs<a class="headerlink" href="#list-your-jobs" title="Permanent link">&para;</a></h3>
 <h4 id="request">Request<a class="headerlink" href="#request" title="Permanent link">&para;</a></h4>
 <p><code>GET /jobs</code></p>
