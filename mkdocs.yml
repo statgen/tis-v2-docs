@@ -1,0 +1,60 @@
+site_name: TOPMed Imputation Server Docs
+repo_name: statgen/imputationserver2
+repo_url: https://github.com/statgen/imputationserver2
+edit_uri: edit/master/docs
+
+theme:
+  name: material
+  features:
+    - content.tooltips
+    - navigation.tabs
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+    - content.tabs.link
+    - content.code.annotate
+    - content.code.copy
+  font:
+    text: Segoe UI
+    code: Roboto Mono
+
+  palette:
+    primary: custom
+    accent: blue
+  favicon: img/favicon.ico
+
+extra_css:
+  - stylesheets/extra.css
+
+nav:
+- Home: index.md
+- About: about.md
+- Genotype Imputation:
+  - Getting Started: imputation/getting-started.md
+  - Data Preparation: imputation/data-preparation.md
+  - Changes in Allele Swap Handling: imputation/qc-allele-swaps.md
+  - Reference Panel: imputation/reference-panel.md
+  - Pipeline Overview: imputation/pipeline-overview.md
+  - Data Security: imputation/data-security.md
+- API:
+  - API Overview: api/api-overview.md
+  - API Reference: api/api-reference.md
+- Contact: contact.md
+- FAQ: faq.md
+
+
+markdown_extensions:
+  - tables
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - attr_list
+  - md_in_html
+  - toc:
+      title: On this page
+      permalink: true

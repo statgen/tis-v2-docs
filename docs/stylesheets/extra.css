@@ -1,0 +1,15 @@
+:root {
+  --md-primary-fg-color: #c31f3f;
+  --md-primary-fg-color--light: #f8f9fa;
+  /* --md-primary-fg-color--dark:  #90030C; */
+  /* --md-text-font: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif; */
+}
+
+.right {
+  float: right;
+  width: 40%;
+}
+
+.small {
+    font-size: smaller;
+}
