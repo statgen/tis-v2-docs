@@ -1454,6 +1454,8 @@
 <a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="p">}</span>
 </code></pre></div>
 <h2 id="endpoints">Endpoints<a class="headerlink" href="#endpoints" title="Permanent link">&para;</a></h2>
+<p>The following sections give detailed information (with examples) about the most common endpoints you will interact with.</p>
+<p>Because the authentication token should be kept secure, in all the following examples we assume you haven't copy-pasted yours in a scipt. Instead, we assume you have set it as an enviornment variable called <code>TOPMED_TOKEN</code>.</p>
 <h3 id="list-your-jobs">List Your Jobs<a class="headerlink" href="#list-your-jobs" title="Permanent link">&para;</a></h3>
 <h4 id="request">Request<a class="headerlink" href="#request" title="Permanent link">&para;</a></h4>
 <p><code>GET /jobs</code></p>
@@ -1478,7 +1480,7 @@
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$<span class="w"> </span>curl<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;X-Auth-Token: &lt;jwt-token&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;X-Auth-Token: </span><span class="si">${</span><span class="nv">TOPMED_TOKEN</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="s1">&#39;https://topmed.dev.imputationserver.org/api/v2/jobs?page=3&#39;</span>
 </code></pre></div>
 </div>
@@ -1543,7 +1545,7 @@
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>$<span class="w"> </span>curl<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;X-Auth-Token: &lt;jwt-token&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;X-Auth-Token: </span><span class="si">${</span><span class="nv">TOPMED_TOKEN</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="s1">&#39;https://topmed.dev.imputationserver.org/api/v2/jobs/job-20251016-102620-166&#39;</span>
 </code></pre></div>
 </div>
@@ -1727,7 +1729,7 @@
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>$<span class="w"> </span>curl<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;X-Auth-Token: &lt;jwt-token&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;X-Auth-Token: </span><span class="si">${</span><span class="nv">TOPMED_TOKEN</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span>-F<span class="w"> </span><span class="s2">&quot;refpanel=topmed-r3&quot;</span><span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span>-F<span class="w"> </span><span class="s2">&quot;build=hg19&quot;</span><span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">    </span>-F<span class="w"> </span><span class="s2">&quot;population=all&quot;</span><span class="w"> </span><span class="se">\</span>
@@ -1777,7 +1779,7 @@
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>$<span class="w"> </span>curl<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;X-Auth-Token: &lt;jwt-token&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;X-Auth-Token: </span><span class="si">${</span><span class="nv">TOPMED_TOKEN</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">    </span><span class="s1">&#39;https://topmed.dev.imputationserver.org/api/v2/jobs/job-20251016-153844-544/cancel&#39;</span>
 </code></pre></div>
 </div>
@@ -1852,7 +1854,7 @@
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>$<span class="w"> </span>curl<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;X-Auth-Token: &lt;jwt-token&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;X-Auth-Token: </span><span class="si">${</span><span class="nv">TOPMED_TOKEN</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">    </span>-L<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">    </span><span class="s1">&#39;https://topmed.dev.imputationserver.org/share/results/&lt;hash&gt;/qc_report.txt&#39;</span><span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">    </span>&gt;<span class="w"> </span>qc_report.txt
