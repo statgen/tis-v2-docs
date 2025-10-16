@@ -7,7 +7,7 @@ hide:
 
 ## What chromosomes are supported?
 
-The TOPMed reference panel can be used to impute autosomes (1-22) and the X chromosome. See [here](/imputation/reference-panel) for more details.
+The TOPMed reference panel can be used to impute autosomes (1-22) and the X chromosome. See [here](imputation/reference-panel.md) for more details.
 
 Please note that we do NOT support Y or MT chromosome processing.
 
@@ -17,7 +17,7 @@ The Imputation Server only accepts jobs containing between 20 and 25,000 samples
 
 This limit exists to preserve quality of service for a wide audience. A workaround is to break large jobs into multiple chunks of 25,000 samples each. After completion, the results can be re-merged using [hds-util](https://github.com/statgen/hds-util) to combine the chunks and calculate the corrected R2.
 
-If you have a use case that routinely requires smaller or larger jobs, please [contact us](/contact) with details.
+If you have a use case that routinely requires smaller or larger jobs, please [contact us](contact.md) with details.
 
 ## I did not receive a password for my job, can you re-send it?
 
@@ -56,11 +56,11 @@ Please check the following points:
 
 ## How long are my results available?
 
-Your data is available for 7 days. If you need to extend the due date, please [let us know](/contact) ahead of time. Once the data is deleted we cannot help.
+Your data is available for 7 days. If you need to extend the due date, please [let us know](contact.md) ahead of time. Once the data is deleted we cannot help.
 
 ## How many times can I download my files?
 
-There is a limit of 50 downloads per file. Please [let us know](/contact) if you need an extension.
+There is a limit of 50 downloads per file. Please [let us know](contact.md) if you need an extension.
 
 ## How can I improve the download speed?
 
@@ -72,7 +72,7 @@ Yes! If you click the download icon in the **Results** tab, you will encounter `
 
 ## Is this service secure?
 
-Due to small team size, it is difficult for us to complete detailed security questionnaires for every company or entity. However, as of May 2023, we have completed a rigorous external security review and received federal Authorization to Operate (ATO) from NHLBI/NIH. Please see our [security](/data-sensitivity) documentation for some common information, or [contact us](/contact) for specific questions.
+Due to small team size, it is difficult for us to complete detailed security questionnaires for every company or entity. However, as of May 2023, we have completed a rigorous external security review and received federal Authorization to Operate (ATO) from NHLBI/NIH. Please see our [security](imputation/data-security.md) documentation for some common information, or [contact us](contact.md) for specific questions.
 
 ## Why do my VCF 4.3 chromosome X phasing jobs keep failing?
 

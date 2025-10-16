@@ -7,7 +7,7 @@ The REST APIs provide programmatic ways to submit new jobs and to download data 
 
 The TOPMed Imputation Server uses a token-based authentication. The token is required for all future interaction with the server. The token can be created and downloaded from your user profile (username -> Profile):
 
-![Activate API](/img/api.png)
+![Activate API](../img/api.png)
 
 For security reasons, Api Tokens are valid for 30 days. You can check the status in the web interface.
 

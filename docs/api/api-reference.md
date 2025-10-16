@@ -2,7 +2,7 @@
 
 ## Authentication
 
-All HTTP calls to the API require authentication with a bearer token, sent in the request header `X-Auth-Token`. See the [API Overview](./api-overview) for details on obtaining a token.
+All HTTP calls to the API require authentication with a bearer token, sent in the request header `X-Auth-Token`. See the [API Overview](./api-overview.md) for details on obtaining a token.
 
 The token you receive from the server is a JSON Web Token (JWT), as specified by the IETF standard [RFC 7519](https://tools.ietf.org/html/rfc7519). For a good introduction to the format, [see here](https://www.jwt.io/introduction#what-is-json-web-token).
 
@@ -85,9 +85,14 @@ OutputInfo = {
 
 ## Endpoints
 
+The following sections give detailed information and examples about the most common endpoints you will interact with.
+
+Because the authentication token should be kept secure, in all the following examples we assume you haven't copy-pasted yours in a script. Instead, we assume you have set it as an enviornment variable called `TOPMED_TOKEN`.
+
 ### List Your Jobs
 
 #### Request
+
 `GET /jobs`
 
 * URL parameters:
@@ -112,7 +117,7 @@ Request:
 === "CURL"
     ```sh
     $ curl \
-        -H "X-Auth-Token: <jwt-token>" \
+        -H "X-Auth-Token: ${TOPMED_TOKEN}" \
         'https://topmed.dev.imputationserver.org/api/v2/jobs?page=3'
     ```
 === "Python"
@@ -186,7 +191,7 @@ Request:
 === "CURL"
     ```sh
     $ curl \
-        -H "X-Auth-Token: <jwt-token>" \
+        -H "X-Auth-Token: ${TOPMED_TOKEN}" \
         'https://topmed.dev.imputationserver.org/api/v2/jobs/job-20251016-102620-166'
     ```
 === "Python"
@@ -316,7 +321,7 @@ Since most input validation is done when the job gets processed, this call usual
 === "CURL"
     ```sh
     $ curl \
-        -H "X-Auth-Token: <jwt-token>" \
+        -H "X-Auth-Token: ${TOPMED_TOKEN}" \
         -F "refpanel=topmed-r3" \
         -F "build=hg19" \
         -F "population=all" \
@@ -370,7 +375,7 @@ Request:
 === "CURL"
     ```sh
     $ curl \
-        -H "X-Auth-Token: <jwt-token>" \
+        -H "X-Auth-Token: ${TOPMED_TOKEN}" \
         'https://topmed.dev.imputationserver.org/api/v2/jobs/job-20251016-153844-544/cancel'
     ```
 === "Python"
@@ -453,7 +458,7 @@ This endpoint returns the file contents. Note that this can be a large binary bl
 === "CURL"
     ```sh
     $ curl \
-        -H "X-Auth-Token: <jwt-token>" \
+        -H "X-Auth-Token: ${TOPMED_TOKEN}" \
         -L \
         'https://topmed.dev.imputationserver.org/share/results/<hash>/qc_report.txt' \
         > qc_report.txt

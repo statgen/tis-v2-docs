@@ -17,7 +17,7 @@ Please cite the following papers if you use the TOPMed Imputation Server:
 
 Please [log in](https://imputation.biodatacatalyst.nhlbi.nih.gov/index.html#!pages/login) with your credentials and click on the **Run** tab to start a new imputation job. The submission dialog allows you to specify the properties of your imputation job.
 
-![TOPMed Imputation Server job submission page.](/img/submit-job-01.png)
+![TOPMed Imputation Server job submission page.](../img/submit-job-01.png)
 
 The following options are available:
 
@@ -29,7 +29,7 @@ The TOPMed Imputation Server offers genotype imputation for the TOPMed reference
 
 - TOPMed (Version r3 2023)
 
-See the [reference panel documentation](/imputation/reference-panel) for details.
+See the [reference panel documentation](reference-panel.md) for details.
 
 #### Michigan Imputation Server
 
@@ -39,13 +39,13 @@ The Michigan Imputation Server is a separate service with several additional ref
 
 The Input Files dialog lets you choose VCF files for imputation. When you submit the job, all the selected files will be transferred from your local file system to the TOPMed Imputation Server. By clicking on **Select Files**, an open dialog will appear where you can choose your VCF files.
 
-![File selection box open, showing VCF files.](/img/upload-data-01.png)
+![File selection box open, showing VCF files.](../img/upload-data-01.png)
 
 You can select multiple files by holding down the Ctrl, Cmd, or Shift key, depending on your operating system. After confirming your selection, all chosen files will be listed in the Input Files dialog.
 
-![Selected files are displayed in the Input Files dialog.](/img/upload-data-02.png)
+![Selected files are displayed in the Input Files dialog.](../img/upload-data-02.png)
 
-Please ensure that all files meet the [requirements](/data-preparation).
+Please ensure that all files meet the [requirements](data-preparation.md).
 
 !!! important
     Since version 1.7.2 URL-based uploads (`sftp` and `http(s)`) are no longer supported. Please use direct file uploads instead.
@@ -96,7 +96,7 @@ All imputed genes are returned as encrypted ZIP files. If you select the **AES 2
 
 After confirming our **Terms of Service**, you can submit your imputation job by clicking **Start Imputation**. If your data passes the QC steps, your job will be added to the queue and processed as soon as possible. You can check your position in the queue on the job summary page.
 
-![Job summary page showing a waiting job, and its position in the queue.](/img/queue-01.png)
+![Job summary page showing a waiting job, and its position in the queue.](../img/queue-01.png)
 
 We will notify you by email as soon as the job is finished or if your data does not pass the quality control steps.
 
@@ -104,13 +104,13 @@ We will notify you by email as soon as the job is finished or if your data does 
 
 In the first step, we check if your uploaded files are valid and calculate basic statistics, such as the number of samples, chromosomes, and SNPs.
 
-![Job summary page showing an in-progress message for the Input Validation step.](/img/input-validation-01.png)
+![Job summary page showing an in-progress message for the Input Validation step.](../img/input-validation-01.png)
 
 After the input validation is complete, basic statistics can be viewed directly in the web interface.
 
-![Job summary page showing an in-progress job that has completed its Input Validation step. Basic statistics are shown.](/img/input-validation-02.png)
+![Job summary page showing an in-progress job that has completed its Input Validation step. Basic statistics are shown.](../img/input-validation-02.png)
 
-If you encounter problems with your data, please read this tutorial on [Data Preparation](/data-preparation) to ensure your data is in the correct format.
+If you encounter problems with your data, please read this tutorial on [Data Preparation](data-preparation.md) to ensure your data is in the correct format.
 
 ### Quality Control
 
@@ -129,7 +129,7 @@ All filtered variants are listed in a file called `statistics.txt`, which can be
 !!! important
     Due to changes in Minimac 4, Michigan Imputation Server 2 now includes filtering and checks for allele swaps. For more information, please click [here](./qc-allele-swaps.md).
 
-![Job summary page showing Quality Control results. Various statistics are displayed.](/img/quality-control-02.png)
+![Job summary page showing Quality Control results. Various statistics are displayed.](../img/quality-control-02.png)
 
 If you selected a population, we compare the allele frequencies of the uploaded data with those from the reference panel. The results of this check are available in the QC report and can be downloaded by clicking on `qcreport.html`.
 
@@ -142,7 +142,7 @@ Imputation is achieved with Minimac4 (version 4.1.6).
 
 If imputation is successful, we will compress and encrypt your data, and send you a random password via email.
 
-![Job summary page showing a completed Data Compression and Encryption step. A notification indicates that the password has been sent via email to the user.](/img/compression-01.png)
+![Job summary page showing a completed Data Compression and Encryption step. A notification indicates that the password has been sent via email to the user.](../img/compression-01.png)
 
 !!! important  "Password not stored at any time"
      **This password is not stored on our server at any time.** Therefore, if you lost the password, there is no way to resend it to you.
@@ -151,7 +151,7 @@ If imputation is successful, we will compress and encrypt your data, and send yo
 
 You will be notified by email as soon as the imputation job is complete. For each submitted gene, a ZIP archive containing the imputed results can be downloaded directly from the server. To decrypt the results, a one-time password will be generated by the server and included in the email. The QC report and filter statistics are also available for viewing and download.
 
-![Job summary page displaying a completed job. A listing shows all files available for download.](/img/job-results.png)
+![Job summary page displaying a completed job. A listing shows all files available for download.](../img/job-results.png)
 
 !!! important "All data is deleted automatically after 7 days"
       **Be sure to download all required data within 7 calendar days!** We will send you a reminder 48 hours before your data is deleted. Once your job reaches the **retired** state, we will not be able to recover your data.
@@ -161,10 +161,10 @@ You will be notified by email as soon as the imputation job is complete. For eac
 
 All results can be downloaded directly through your browser by clicking on the filename.
 
-![Job summary page displaying a completed job. A listing shows all files available for download.](/img/share-data-02.png)
+![Job summary page displaying a completed job. A listing shows all files available for download.](../img/share-data-02.png)
 
 If you wish to download results via the command line using `wget` or `curl`, click on the download icon to obtain download links. A new dialog will appear. Use the **wget** tab to get a copy & paste ready command that can be used on Linux or MacOS:
 
-![Modal ](/img/share-data-01.png)
+![Modal ](../img/share-data-01.png)
 
 Otherwise, you can use the **URLs** tab to copy the download links.

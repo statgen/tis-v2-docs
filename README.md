@@ -10,11 +10,13 @@ This project uses `uv` for dependency management. To install dependencies:
 ```sh
 uv sync
 ```
+
 To run the docs server locally:
 ```sh
 uv run mkdocs server
 ```
-Alternatively, after syncing you can activate `venv` the old-fashioned way:
+
+To deploy the docs, run:
 ```sh
-. .venv/bin/activate
+uv run mkdocs gh-deploy
 ```
