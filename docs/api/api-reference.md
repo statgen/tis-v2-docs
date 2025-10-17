@@ -87,7 +87,7 @@ OutputInfo = {
 
 The following sections give detailed information and examples about the most common endpoints you will interact with.
 
-Because the authentication token should be kept secure, in all the following examples we assume you haven't copy-pasted yours in a script. Instead, we assume you have set it as an enviornment variable called `TOPMED_TOKEN`.
+Because the authentication token should be kept secure, in all the following examples we assume you haven't copy-pasted yours in a script. Instead, we assume you have set it as an enviornment variable called `TIS_TOKEN`.
 
 ### List Your Jobs
 
@@ -117,8 +117,8 @@ Request:
 === "CURL"
     ```sh
     $ curl \
-        -H "X-Auth-Token: ${TOPMED_TOKEN}" \
-        'https://topmed.dev.imputationserver.org/api/v2/jobs?page=3'
+        -H "X-Auth-Token: ${TIS_TOKEN}" \
+        'https://imputation.biodatacatalyst.nhlbi.nih.gov/api/v2/jobs?page=3'
     ```
 === "Python"
     ```python
@@ -126,7 +126,7 @@ Request:
     import requests
 
     BASE_URL = "https://imputationserver.sph.umich.edu/api/v2"
-    AUTH_TOKEN = os.environ("TOPMED_TOKEN") # Reading from environment (don't store it in code!)
+    AUTH_TOKEN = os.environ("TIS_TOKEN") # Reading from environment (don't store it in code!)
 
     # List the user's jobs
     response = requests.get(BASE_URL + "/jobs?page=3", headers={'X-Auth-Token' : AUTH_TOKEN })
@@ -145,27 +145,27 @@ Response:
     "pageSize": 15,
     "data": [
         {
-            "deletedOn": 1757087819500,
-            "endTime": 1756480937680,
             "id": "job-20250829-110739-457",
             "name": "My Job!",
-            "steps": [],
             "state": 7, // RETIRED
             "positionInQueue": -1,
-            "startTime": 1756480059670,
             "submittedOn": 1756480059559,
+            "startTime": 1756480059670,
+            "endTime": 1756480937680,
+            "deletedOn": 1757087819500,
+            "steps": [],
             "outputParams": [],
         },
         {
-            "deletedOn": 1757087819674,
-            "endTime": 1756480979111,
-            "id": "job-20250829-110738-968",
+            "id": "job-20250829-110620-968",
             "name": "Another One Bites the Dust",
-            "steps": [],
             "state": 7, // RETIRED
             "positionInQueue": -1,
-            "startTime": 1756480059200,
             "submittedOn": 1756480059088,
+            "startTime": 1756480059200,
+            "endTime": 1756480979111,
+            "deletedOn": 1757087819674,
+            "steps": [],
             "outputParams": [],
         }
     ]
@@ -191,8 +191,8 @@ Request:
 === "CURL"
     ```sh
     $ curl \
-        -H "X-Auth-Token: ${TOPMED_TOKEN}" \
-        'https://topmed.dev.imputationserver.org/api/v2/jobs/job-20251016-102620-166'
+        -H "X-Auth-Token: ${TIS_TOKEN}" \
+        'https://imputation.biodatacatalyst.nhlbi.nih.gov/api/v2/jobs/job-20251016-102620-166'
     ```
 === "Python"
     ```python
@@ -200,7 +200,7 @@ Request:
     import requests
 
     BASE_URL = "https://imputationserver.sph.umich.edu/api/v2"
-    AUTH_TOKEN = os.environ("TOPMED_TOKEN") # Reading from environment (don't store it in code!)
+    AUTH_TOKEN = os.environ("TIS_TOKEN") # Reading from environment (don't store it in code!)
     JOB_ID = "job-20251016-102620-166"
 
     # Get details for job job-20251016-102620-166
@@ -288,7 +288,7 @@ Response:
 
 #### Request
 
-`POST /jobs`
+`POST /jobs/submit/imputationserver2`
 
 This `POST` request needs to follow the `multipart/form-data` encoding to pass its inputs. It expects the following form parameters:
 
@@ -318,17 +318,19 @@ Since most input validation is done when the job gets processed, this call usual
 
 #### Example
 
+Request:
+
 === "CURL"
     ```sh
     $ curl \
-        -H "X-Auth-Token: ${TOPMED_TOKEN}" \
+        -H "X-Auth-Token: ${TIS_TOKEN}" \
         -F "refpanel=topmed-r3" \
         -F "build=hg19" \
         -F "population=all" \
         -F "files=@chr19.vcf.gz" \
         -F "files=@chr20.vcf.gz" \
         -F "files=@chr21.vcf.gz" \
-        'https://topmed.dev.imputationserver.org/api/v2/jobs/submit/imputationserver2'
+        'https://imputation.biodatacatalyst.nhlbi.nih.gov/api/v2/jobs/submit/imputationserver2'
     ```
 === "Python"
     ```python
@@ -336,7 +338,7 @@ Since most input validation is done when the job gets processed, this call usual
     import requests
 
     BASE_URL = "https://imputationserver.sph.umich.edu/api/v2"
-    AUTH_TOKEN = os.environ("TOPMED_TOKEN") # Reading from environment (don't store it in code!)
+    AUTH_TOKEN = os.environ("TIS_TOKEN") # Reading from environment (don't store it in code!)
 
     url = BASE_URL + "/jobs"
 
@@ -358,6 +360,16 @@ Since most input validation is done when the job gets processed, this call usual
         print(json.dumps(payload, indent=4))
     ```
 
+Response:
+
+```json
+{
+  "success": true,
+  "message": "Your job was successfully added to the job queue.",
+  "id": "job-20251016-224029-866"
+}
+```
+
 ### Cancel a Job
 
 #### Request
@@ -375,8 +387,8 @@ Request:
 === "CURL"
     ```sh
     $ curl \
-        -H "X-Auth-Token: ${TOPMED_TOKEN}" \
-        'https://topmed.dev.imputationserver.org/api/v2/jobs/job-20251016-153844-544/cancel'
+        -H "X-Auth-Token: ${TIS_TOKEN}" \
+        'https://imputation.biodatacatalyst.nhlbi.nih.gov/api/v2/jobs/job-20251016-153844-544/cancel'
     ```
 === "Python"
     ```python
@@ -384,7 +396,7 @@ Request:
     import requests
 
     BASE_URL = "https://imputationserver.sph.umich.edu/api/v2"
-    AUTH_TOKEN = os.environ("TOPMED_TOKEN") # Reading from environment (don't store it in code!)
+    AUTH_TOKEN = os.environ("TIS_TOKEN") # Reading from environment (don't store it in code!)
     JOB_ID = "job-20251016-102620-166"
 
     # Get details for job job-20251016-102620-166
@@ -458,9 +470,9 @@ This endpoint returns the file contents. Note that this can be a large binary bl
 === "CURL"
     ```sh
     $ curl \
-        -H "X-Auth-Token: ${TOPMED_TOKEN}" \
+        -H "X-Auth-Token: ${TIS_TOKEN}" \
         -L \
-        'https://topmed.dev.imputationserver.org/share/results/<hash>/qc_report.txt' \
+        'https://imputation.biodatacatalyst.nhlbi.nih.gov/share/results/<hash>/qc_report.txt' \
         > qc_report.txt
     ```
 === "Python"
@@ -469,7 +481,7 @@ This endpoint returns the file contents. Note that this can be a large binary bl
     import requests
 
     BASE_URL = "https://imputationserver.sph.umich.edu" # Note the shorter BASE_URL
-    AUTH_TOKEN = os.environ("TOPMED_TOKEN") # Reading from environment (don't store it in code!)
+    AUTH_TOKEN = os.environ("TIS_TOKEN") # Reading from environment (don't store it in code!)
     HASH = "..." # Put your file hash here (or better yet, write code that does that for you!)
     FILE = "qc_report.txt"
 
