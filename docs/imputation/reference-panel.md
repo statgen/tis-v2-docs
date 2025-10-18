@@ -6,9 +6,9 @@ hide:
 
 # Reference Panel
 
-## TOPMed r3
+We currently offer one reference panel for imputation: TOPMed r3.
 
-The TOPMed r3 panel consists of ???
+## TOPMed r3
 
 |                   |                                                     |
 | ----------------- | --------------------------------------------------- |
