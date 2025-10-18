@@ -296,8 +296,8 @@ This `POST` request needs to follow the `multipart/form-data` encoding to pass i
 | ---------- | ------------------------- | --------- | ------------ | ----------- |
 | files      | octet stream (input file) | mandatory | -            | VCF input file uploaded to the server. This argument can be repeated any number of times, once for each input file. |
 | refpanel   | `topmed-r3`               | mandatory | -            | Reference panel (only TOPMed r3 available). |
-| build      | `hg19` or `hg38`          | mandatory | -            | Build format of the input VCF files. |
 | population | `off` or `all`            | mandatory | -            | Allele frequency check. |
+| build      | `hg19` or `hg38`          | optional  | `hg19`       | Build format of the input VCF files. |
 | job-name   | string                    | optional  | (job ID)     | User-defined name for this job. |
 | mode       | `imputation` or `qc_only` | optional  | `imputation` | Whether to only run QC or full imputation. |
 | phasing    | `eagle` or `no_phasing`   | optional  | `eagle`      | Whether to phase with Eagle or skip phasing. |
