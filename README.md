@@ -1,6 +1,8 @@
 # TOPMed Imputation Server Docs (Nextflow Edition)
 
-New TOPMed Imputation Server documentation for the Nextflow edition (Cloudgene 3 / Imputationserver 2).
+New TOPMed Imputation Server documentation for the Nextflow edition (Cloudgene 3 / Imputationserver 2):
+
+https://statgen.github.io/tis-v2-docs/
 
 Following on the steps of [genepi/michigan-imputationserver](https://github.com/genepi/michigan-imputationserver), we moved the docs to a consolidated [MkDocs](https://www.mkdocs.org/) system. Prettier and ad-free!
 
