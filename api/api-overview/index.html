@@ -965,8 +965,8 @@
 <li>See your current and past jobs.</li>
 <li>Get detailed information about a specific job.</li>
 </ul>
-<p>You send HTTP requests to our API endpoints using any tool of your liking (CURL, Python with requests, the imputationbot...), and we respond with a JSON object.</p>
-<p>The base URL for all calls to the API is:</p>
+<p>You send HTTP requests to our API endpoints using any tool of your liking (<code>curl</code>, Python with requests, the <code>imputationbot</code>...), and we respond with a JSON object.</p>
+<p>The base URL for calls to the API is:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>BASE_URL = https://imputation.biodatacatalyst.nhlbi.nih.gov/api/v2/
 </code></pre></div>
 <p>So if we say an endpoint is <code>/jobs</code>, the full URL you need to call is <code>https://imputation.biodatacatalyst.nhlbi.nih.gov/api/v2/jobs</code>.</p>
@@ -1034,11 +1034,11 @@
 <p>It will print something along the lines of</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;job-20250829-110739-457&quot;</span><span class="p">,</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="c1">// RETIRED</span>
 <a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="p">}</span>
 <a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="p">{</span>
 <a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;job-20250829-110620-968&quot;</span><span class="p">,</span>
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="c1">// RETIRED</span>
 <a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="p">}</span>
 <a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="err">...</span>
 </code></pre></div>
@@ -1079,7 +1079,7 @@
 <a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">    </span>-F<span class="w"> </span><span class="s2">&quot;files=@chr21.vcf.gz&quot;</span><span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">    </span><span class="s1">&#39;https://imputation.biodatacatalyst.nhlbi.nih.gov/api/v2/jobs/submit/imputationserver2&#39;</span>
 </code></pre></div>
-<p>The <code>-F</code> flag denotes a form field for <code>multipart/form-data</code>, and the ampersand <code>@</code> tells <code>curl</code> to load the whole file as a binary stream. Once you submit, you will receive a message like this:</p>
+<p>The <code>-F</code> flag denotes a form field for <code>multipart/form-data</code>, and the at-sign <code>@</code> tells <code>curl</code> to load the whole file as a binary stream. Once you submit, you will receive a message like this:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">{</span>
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
 <a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Your job was successfully added to the job queue.&quot;</span><span class="p">,</span>
