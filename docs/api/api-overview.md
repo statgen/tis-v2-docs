@@ -8,9 +8,9 @@ The TOPMed Imputation Server exposes a REST API you can use directly to do tasks
 - See your current and past jobs.
 - Get detailed information about a specific job.
 
-You send HTTP requests to our API endpoints using any tool of your liking (CURL, Python with requests, the imputationbot...), and we respond with a JSON object.
+You send HTTP requests to our API endpoints using any tool of your liking (`curl`, Python with requests, the `imputationbot`...), and we respond with a JSON object.
 
-The base URL for all calls to the API is:
+The base URL for calls to the API is:
 
 ```
 BASE_URL = https://imputation.biodatacatalyst.nhlbi.nih.gov/api/v2/
@@ -107,11 +107,11 @@ It will print something along the lines of
 ```json
 {
     "id": "job-20250829-110739-457",
-    "state": 7,
+    "state": 7, // RETIRED
 }
 {
     "id": "job-20250829-110620-968",
-    "state": 7,
+    "state": 7, // RETIRED
 }
 ...
 ```
@@ -165,7 +165,7 @@ curl \
     'https://imputation.biodatacatalyst.nhlbi.nih.gov/api/v2/jobs/submit/imputationserver2'
 ```
 
-The `-F` flag denotes a form field for `multipart/form-data`, and the ampersand `@` tells `curl` to load the whole file as a binary stream. Once you submit, you will receive a message like this:
+The `-F` flag denotes a form field for `multipart/form-data`, and the at-sign `@` tells `curl` to load the whole file as a binary stream. Once you submit, you will receive a message like this:
 
 ```json
 {
