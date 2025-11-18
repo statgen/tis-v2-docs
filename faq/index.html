@@ -493,29 +493,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../imputation/qc-allele-swaps/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Changes in Allele Swap Handling
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../imputation/reference-panel/" class="md-nav__link">
         
   
@@ -662,6 +639,52 @@
   
   <span class="md-ellipsis">
     API Reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/impute-cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Impute CLI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/imputationbot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Imputationbot
     
   </span>
   
@@ -1041,7 +1064,6 @@
 <h2 id="how-many-samples-can-i-submit-at-once">How many samples can I submit at once?<a class="headerlink" href="#how-many-samples-can-i-submit-at-once" title="Permanent link">&para;</a></h2>
 <p>The Imputation Server only accepts jobs containing between 20 and 25,000 samples. If your job is too small (&lt; 20 samples) or too large (&gt; 25,000 samples), it will be rejected.</p>
 <p>This limit exists to preserve quality of service for a wide audience. A workaround is to break large jobs into multiple chunks of 25,000 samples each. After completion, the results can be re-merged using <a href="https://github.com/statgen/hds-util">hds-util</a> to combine the chunks and calculate the corrected R2.</p>
-<p>If you have a use case that routinely requires smaller or larger jobs, please <a href="../contact/">contact us</a> with details.</p>
 <h2 id="i-did-not-receive-a-password-for-my-job-can-you-re-send-it">I did not receive a password for my job, can you re-send it?<a class="headerlink" href="#i-did-not-receive-a-password-for-my-job-can-you-re-send-it" title="Permanent link">&para;</a></h2>
 <p>We can't.</p>
 <p>The TOPMed Imputation Server creates a random password for each imputation job. For security reasons, this password is not stored on server-side at any time. If you didn't receive a password, please check the spam folder in your email. Please note that we are not able to re-send you the password. If you lose it, you will need to re-run your imputation job.</p>
@@ -1051,16 +1073,6 @@
 <h2 id="how-many-jobs-can-i-submit-at-once">How many jobs can I submit at once?<a class="headerlink" href="#how-many-jobs-can-i-submit-at-once" title="Permanent link">&para;</a></h2>
 <p>You can have up to three (3) jobs running at the same time. Please note that attempting to bypass this limit might result in a ban.</p>
 <p>The TOPMed imputation server is a free resource, and usage limits allow us to provide service to a wide audience. Please do not attempt to bypass these limits by creating multiple accounts. We monitor usage, and reserve the right to terminate jobs or accounts that are in violation of our policies.</p>
-<!-- ## Unzip all files with a single command
-
-You can unzip all result files at once using the command below:
-
-`ls *.zip | xargs -P <nprocs> -n 1 unzip -P '<password>'`
-
--P <nprocs> specifies how many files to unzip in parallel (based on the number of CPU cores available).
--n 1 ensures that each unzip command processes one file at a time.
-Replace <password> with the password provided for your result files. (Thanks to Charles-Alexandre for the suggestion) -->
-
 <h2 id="the-unzip-command-is-not-working-what-do-i-do">The unzip command is not working. What do I do?<a class="headerlink" href="#the-unzip-command-is-not-working-what-do-i-do" title="Permanent link">&para;</a></h2>
 <p>Please check the following points:</p>
 <ol>
@@ -1068,13 +1080,13 @@ Replace <password> with the password provided for your result files. (Thanks to 
 <li>If your password includes special characters (e.g. <code>\</code>), please put single or double quotes around the password when extracting it from the command line (e.g. <code>7z x -p"PASSWORD" chr_22.zip</code>).</li>
 </ol>
 <h2 id="how-long-are-my-results-available">How long are my results available?<a class="headerlink" href="#how-long-are-my-results-available" title="Permanent link">&para;</a></h2>
-<p>Your data is available for 7 days. If you need to extend the due date, please <a href="../contact/">let us know</a> ahead of time. Once the data is deleted we cannot help.</p>
+<p>Your data is available for 7 days after the job finishes. If you need to extend the due date, please <a href="../contact/">let us know</a> ahead of time. Once the data is deleted we cannot help.</p>
 <h2 id="how-many-times-can-i-download-my-files">How many times can I download my files?<a class="headerlink" href="#how-many-times-can-i-download-my-files" title="Permanent link">&para;</a></h2>
 <p>There is a limit of 50 downloads per file. Please <a href="../contact/">let us know</a> if you need an extension.</p>
 <h2 id="how-can-i-improve-the-download-speed">How can I improve the download speed?<a class="headerlink" href="#how-can-i-improve-the-download-speed" title="Permanent link">&para;</a></h2>
 <p><a href="https://aria2.github.io/">aria2</a> tries to utilize your maximum download bandwidth. Remember to raise the k parameter significantly (-k, --min-split-size=SIZE). You will otherwise hit the Imputation Server download limit for each file (thanks to Anthony Marcketta for pointing this out).</p>
 <h2 id="can-i-download-all-results-at-once">Can I download all results at once?<a class="headerlink" href="#can-i-download-all-results-at-once" title="Permanent link">&para;</a></h2>
-<p>Yes! If you click the download icon in the <strong>Results</strong> tab, you will encounter <code>wget</code> and <code>curl</code> commands to easily download all the files from the same step at once. You can also use the <code>imputationbot</code> or your own scripts for parallel downloads.</p>
+<p>Yes! If you click the download icon in the <strong>Results</strong> tab, you will encounter <code>wget</code> and <code>curl</code> commands to easily download all the files from the same step at once. You can also use CLI tools such as <a href="../api/impute-cli/">impute</a> or your own scripts for parallel downloads.</p>
 <h2 id="is-this-service-secure">Is this service secure?<a class="headerlink" href="#is-this-service-secure" title="Permanent link">&para;</a></h2>
 <p>Due to small team size, it is difficult for us to complete detailed security questionnaires for every company or entity. However, as of May 2023, we have completed a rigorous external security review and received federal Authorization to Operate (ATO) from NHLBI/NIH. Please see our <a href="../imputation/data-security/">security</a> documentation for some common information, or <a href="../contact/">contact us</a> for specific questions.</p>
 <h2 id="why-do-my-vcf-43-chromosome-x-phasing-jobs-keep-failing">Why do my VCF 4.3 chromosome X phasing jobs keep failing?<a class="headerlink" href="#why-do-my-vcf-43-chromosome-x-phasing-jobs-keep-failing" title="Permanent link">&para;</a></h2>
