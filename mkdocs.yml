@@ -33,7 +33,6 @@ nav:
 - Genotype Imputation:
   - Getting Started: imputation/getting-started.md
   - Data Preparation: imputation/data-preparation.md
-  - Changes in Allele Swap Handling: imputation/qc-allele-swaps.md
   - Reference Panel: imputation/reference-panel.md
   - Pipeline Overview: imputation/pipeline-overview.md
   - Data Security: imputation/data-security.md
