@@ -17,8 +17,6 @@ The Imputation Server only accepts jobs containing between 20 and 25,000 samples
 
 This limit exists to preserve quality of service for a wide audience. A workaround is to break large jobs into multiple chunks of 25,000 samples each. After completion, the results can be re-merged using [hds-util](https://github.com/statgen/hds-util) to combine the chunks and calculate the corrected R2.
 
-If you have a use case that routinely requires smaller or larger jobs, please [contact us](contact.md) with details.
-
 ## I did not receive a password for my job, can you re-send it?
 
 We can't.
@@ -37,16 +35,6 @@ You can have up to three (3) jobs running at the same time. Please note that att
 
 The TOPMed imputation server is a free resource, and usage limits allow us to provide service to a wide audience. Please do not attempt to bypass these limits by creating multiple accounts. We monitor usage, and reserve the right to terminate jobs or accounts that are in violation of our policies.
 
-<!-- ## Unzip all files with a single command
-
-You can unzip all result files at once using the command below:
-
-`ls *.zip | xargs -P <nprocs> -n 1 unzip -P '<password>'`
-
--P <nprocs> specifies how many files to unzip in parallel (based on the number of CPU cores available).
--n 1 ensures that each unzip command processes one file at a time.
-Replace <password> with the password provided for your result files. (Thanks to Charles-Alexandre for the suggestion) -->
-
 ## The unzip command is not working. What do I do?
 
 Please check the following points:
@@ -56,7 +44,7 @@ Please check the following points:
 
 ## How long are my results available?
 
-Your data is available for 7 days. If you need to extend the due date, please [let us know](contact.md) ahead of time. Once the data is deleted we cannot help.
+Your data is available for 7 days after the job finishes. If you need to extend the due date, please [let us know](contact.md) ahead of time. Once the data is deleted we cannot help.
 
 ## How many times can I download my files?
 
@@ -68,7 +56,7 @@ There is a limit of 50 downloads per file. Please [let us know](contact.md) if y
 
 ## Can I download all results at once?
 
-Yes! If you click the download icon in the **Results** tab, you will encounter `wget` and `curl` commands to easily download all the files from the same step at once. You can also use the `imputationbot` or your own scripts for parallel downloads.
+Yes! If you click the download icon in the **Results** tab, you will encounter `wget` and `curl` commands to easily download all the files from the same step at once. You can also use CLI tools such as [impute](api/impute-cli.md) or your own scripts for parallel downloads.
 
 ## Is this service secure?
 
