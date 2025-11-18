@@ -39,6 +39,8 @@ nav:
 - API:
   - API Overview: api/api-overview.md
   - API Reference: api/api-reference.md
+  - Impute CLI: api/impute-cli.md
+  - Imputationbot: api/imputationbot.md
 - Contact: contact.md
 - FAQ: faq.md
 
