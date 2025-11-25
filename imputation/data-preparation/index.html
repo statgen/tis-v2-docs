@@ -1029,7 +1029,7 @@
 
 
 <h1 id="data-preparation">Data Preparation<a class="headerlink" href="#data-preparation" title="Permanent link">&para;</a></h1>
-<p>The TOPMed Imputation Server accepts VCF files compressed with <a href="http://samtools.sourceforge.net/tabix.shtml">bgzip</a>. Please ensure that the following requirements are met:</p>
+<p>The TOPMed Imputation Server accepts VCF files compressed with <a href="https://samtools.sourceforge.net/tabix.shtml">bgzip</a>. Please ensure that the following requirements are met:</p>
 <ul>
 <li>Create a separate vcf.gz file for each chromosome.</li>
 <li>Variants must be sorted by genomic position.</li>
@@ -1045,10 +1045,10 @@
 <p>Multiple *.vcf.gz files can be uploaded at once.</p>
 </div>
 <h2 id="quality-control-for-hrc-1000g-and-caapa-imputation">Quality Control for HRC, 1000G and CAAPA Imputation<a class="headerlink" href="#quality-control-for-hrc-1000g-and-caapa-imputation" title="Permanent link">&para;</a></h2>
-<p>Will Rayner provides an excellent toolbox for preparing data: <a href="http://www.well.ox.ac.uk/~wrayner/tools/">HRC or 1000G Pre-imputation Checks</a>.</p>
+<p>Will Rayner provides an excellent toolbox for preparing data: <a href="https://www.well.ox.ac.uk/~wrayner/tools/">HRC or 1000G Pre-imputation Checks</a>.</p>
 <p>The main steps for using HRC are:</p>
 <h3 id="download-tool-and-sites">Download Tool and Sites<a class="headerlink" href="#download-tool-and-sites" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>wget<span class="w"> </span>http://www.well.ox.ac.uk/~wrayner/tools/HRC-1000G-check-bim-v4.2.7.zip
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>wget<span class="w"> </span>https://www.well.ox.ac.uk/~wrayner/tools/HRC-1000G-check-bim-v4.2.7.zip
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>wget<span class="w"> </span>ftp://ngs.sanger.ac.uk/production/hrc/HRC.r1-1/HRC.r1-1.GRCh37.wgs.mac5.sites.tab.gz
 </code></pre></div>
 <h3 id="convert-pedmap-to-bed">Convert ped/map to bed<a class="headerlink" href="#convert-pedmap-to-bed" title="Permanent link">&para;</a></h3>
@@ -1061,7 +1061,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>perl<span class="w"> </span>HRC-1000G-check-bim.pl<span class="w"> </span>-b<span class="w"> </span>&lt;bim<span class="w"> </span>file&gt;<span class="w"> </span>-f<span class="w"> </span>&lt;freq-file&gt;<span class="w"> </span>-r<span class="w"> </span>HRC.r1-1.GRCh37.wgs.mac5.sites.tab<span class="w"> </span>-h
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>sh<span class="w"> </span>Run-plink.sh
 </code></pre></div>
-<h3 id="create-vcf-using-vcfcooker">Create VCF Using <a href="http://genome.sph.umich.edu/wiki/VcfCooker">VcfCooker</a><a class="headerlink" href="#create-vcf-using-vcfcooker" title="Permanent link">&para;</a></h3>
+<h3 id="create-vcf-using-vcfcooker">Create VCF Using <a href="https://genome.sph.umich.edu/wiki/VcfCooker">VcfCooker</a><a class="headerlink" href="#create-vcf-using-vcfcooker" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>vcfCooker<span class="w"> </span>--in-bfile<span class="w"> </span>&lt;bim<span class="w"> </span>file&gt;<span class="w"> </span>--ref<span class="w"> </span>&lt;reference.fasta&gt;<span class="w">  </span>--out<span class="w"> </span>&lt;output-vcf&gt;<span class="w"> </span>--write-vcf
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>bgzip<span class="w"> </span>&lt;output-vcf&gt;
 </code></pre></div>
@@ -1069,7 +1069,7 @@
 <h3 id="convert-pedmap-files-to-vcf-files">Convert ped/map Files to VCF Files<a class="headerlink" href="#convert-pedmap-files-to-vcf-files" title="Permanent link">&para;</a></h3>
 <p>Several tools are available:
  <a href="https://www.cog-genomics.org/plink2/">plink2</a>,
- <a href="https://samtools.github.io/bcftools">BCFtools</a> or <a href="http://genome.sph.umich.edu/wiki/VcfCooker">VcfCooker</a>.</p>
+ <a href="https://samtools.github.io/bcftools">BCFtools</a> or <a href="https://genome.sph.umich.edu/wiki/VcfCooker">VcfCooker</a>.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>plink<span class="w"> </span>--ped<span class="w"> </span>study_chr1.ped<span class="w"> </span>--map<span class="w"> </span>study_chr1.map<span class="w"> </span>--recode<span class="w"> </span>vcf<span class="w"> </span>--out<span class="w"> </span>study_chr1
 </code></pre></div>
 <p>Create a sorted vcf.gz file using <a href="https://samtools.github.io/bcftools">bcftools</a>:</p>
