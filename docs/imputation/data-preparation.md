@@ -1,6 +1,6 @@
 # Data Preparation
 
-The TOPMed Imputation Server accepts VCF files compressed with [bgzip](http://samtools.sourceforge.net/tabix.shtml). Please ensure that the following requirements are met:
+The TOPMed Imputation Server accepts VCF files compressed with [bgzip](https://samtools.sourceforge.net/tabix.shtml). Please ensure that the following requirements are met:
 
 - Create a separate vcf.gz file for each chromosome.
 - Variants must be sorted by genomic position.
@@ -18,14 +18,14 @@ The TOPMed Imputation Server accepts VCF files compressed with [bgzip](http://sa
 
 ## Quality Control for HRC, 1000G and CAAPA Imputation
 
-Will Rayner provides an excellent toolbox for preparing data: [HRC or 1000G Pre-imputation Checks](http://www.well.ox.ac.uk/~wrayner/tools/).
+Will Rayner provides an excellent toolbox for preparing data: [HRC or 1000G Pre-imputation Checks](https://www.well.ox.ac.uk/~wrayner/tools/).
 
 The main steps for using HRC are:
 
 ### Download Tool and Sites
 
 ```sh
-wget http://www.well.ox.ac.uk/~wrayner/tools/HRC-1000G-check-bim-v4.2.7.zip
+wget https://www.well.ox.ac.uk/~wrayner/tools/HRC-1000G-check-bim-v4.2.7.zip
 wget ftp://ngs.sanger.ac.uk/production/hrc/HRC.r1-1/HRC.r1-1.GRCh37.wgs.mac5.sites.tab.gz
 ```
 
@@ -48,7 +48,7 @@ perl HRC-1000G-check-bim.pl -b <bim file> -f <freq-file> -r HRC.r1-1.GRCh37.wgs.
 sh Run-plink.sh
 ```
 
-### Create VCF Using [VcfCooker](http://genome.sph.umich.edu/wiki/VcfCooker)
+### Create VCF Using [VcfCooker](https://genome.sph.umich.edu/wiki/VcfCooker)
 
 ```sh
 vcfCooker --in-bfile <bim file> --ref <reference.fasta>  --out <output-vcf> --write-vcf
@@ -60,7 +60,7 @@ bgzip <output-vcf>
 
 Several tools are available:
  [plink2](https://www.cog-genomics.org/plink2/),
- [BCFtools](https://samtools.github.io/bcftools) or [VcfCooker](http://genome.sph.umich.edu/wiki/VcfCooker).
+ [BCFtools](https://samtools.github.io/bcftools) or [VcfCooker](https://genome.sph.umich.edu/wiki/VcfCooker).
 
 ```sh
 plink --ped study_chr1.ped --map study_chr1.map --recode vcf --out study_chr1

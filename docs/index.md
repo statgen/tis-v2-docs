@@ -10,7 +10,7 @@ hide:
 # TOPMed imputation Server
 
 
-The [TOPMed Imputation Server](https://imputation.biodatacatalyst.nhlbi.nih.gov/) provides a free genotype imputation service (chromosomes 1-22 and X) using [Minimac4](http://genome.sph.umich.edu/wiki/Minimac4). You can upload phased or unphased GWAS genotypes and receive phased and imputed genomes in return. This server offers imputation from [the TOPMed reference panel](http://nhlbiwgs.org/). For all uploaded datasets, comprehensive QC is performed.
+The [TOPMed Imputation Server](https://imputation.biodatacatalyst.nhlbi.nih.gov/) provides a free genotype imputation service (chromosomes 1-22 and X) using [Minimac4](https://github.com/statgen/Minimac4). You can upload phased or unphased GWAS genotypes and receive phased and imputed genomes in return. This server offers imputation from [the TOPMed reference panel](https://nhlbiwgs.org/). For all uploaded datasets, comprehensive QC is performed.
 
 Please cite the following papers if you use the TOPMed Imputation Server:
 
