@@ -13,7 +13,7 @@ We currently offer one reference panel for imputation: TOPMed r3.
 |                   |                                                     |
 | ----------------- | --------------------------------------------------- |
 | Number of Samples | 133,597                                             |
-| Sites (chr1-22)   | 445,600,184                                         |
+| Sites             | 445,600,184                                         |
 | Chromosomes       | 1-22, X                                             |
 | Imputation Server | <https://imputation.biodatacatalyst.nhlbi.nih.gov/> |
 | Website           | <https://topmed.nhlbi.nih.gov/>                     |
